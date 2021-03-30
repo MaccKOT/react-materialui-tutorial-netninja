@@ -5,11 +5,24 @@ import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  test: {
+    border: (note) => {
+      if (note.category === 'work') {
+        return `1px solid crimson`;
+      }
+    },
+  },
+});
 
 const NoteCard = ({ note, handleDelete }) => {
+  const classes = useStyles(note);
+
   return (
     <>
-      <Card elevation={2}>
+      <Card elevation={2} className={classes.test}>
         <CardHeader
           action={
             <IconButton onClick={() => handleDelete(note.id)}>

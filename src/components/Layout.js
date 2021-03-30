@@ -10,23 +10,29 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons';
 
 const drawerWidth = 240;
-const useStyles = makeStyles({
-  page: {
-    backgroundColor: '#f9f9f9',
-    width: '100%',
-  },
-  root: {
-    display: 'flex',
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  active: {
-    background: '#f4f4f4',
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    page: {
+      backgroundColor: '#f9f9f9',
+      width: '100%',
+      padding: theme.spacing(3),
+    },
+    root: {
+      display: 'flex',
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    active: {
+      background: '#f4f4f4',
+    },
+    title: {
+      padding: theme.spacing(2),
+    },
+  };
 });
 
 const Layout = ({ children }) => {
